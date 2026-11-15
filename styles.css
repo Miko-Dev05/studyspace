@@ -200,3 +200,19 @@ body.reader-mode #doc-preview .doc-note{width:100%;max-width:980px;margin:20px a
 .cloud-status{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;background:var(--soft);color:var(--ink);border-radius:10px;padding:9px 12px}
 .cloud-help{font-size:13px;line-height:1.6;color:var(--muted)}
 .cloud-help strong{color:var(--ink)}
+
+/* V2 — écrans IA et actions fixes de sauvegarde */
+.modal-actions{position:sticky;bottom:-24px;z-index:2;padding:16px 0 4px;background:var(--paper);border-top:1px solid var(--line)}
+#modal .modal-shell{max-height:min(86dvh,780px);overflow-y:auto}
+#modal .modal-actions .primary{min-width:132px}
+.ai-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.ai-panel{padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--paper)}
+.ai-panel h3{margin:0 0 12px;color:var(--ink)}
+.ai-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.ai-output{min-height:360px;resize:vertical;line-height:1.65;font-family:var(--body)}
+.ai-note{font-size:13px;color:var(--muted);margin-top:10px}
+.ai-status{font-size:13px;color:var(--muted);min-height:22px}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ai-grid .form-field{margin:4px 0}
+.ai-settings{display:grid;gap:12px}
+@media(max-width:850px){.ai-layout{grid-template-columns:1fr}.ai-grid{grid-template-columns:1fr}.ai-output{min-height:250px}}

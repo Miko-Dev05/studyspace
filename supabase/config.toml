@@ -1,0 +1,2 @@
+[functions.studyspace-ai]
+verify_jwt = false # Authentification JWT vérifiée explicitement dans la fonction avec getUser().

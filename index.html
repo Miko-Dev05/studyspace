@@ -14,11 +14,11 @@
   <aside class="sidebar" id="sidebar">
     <button class="brand" id="brand" aria-label="Accueil StudySpace"><span class="brand-icon">✦</span><span>Study<span class="brand-accent">Space</span><small>Mon espace de révision</small></span></button>
     <div class="side-caption">ESPACE PERSONNEL</div>
-    <nav class="side-nav" aria-label="Navigation"><button class="nav-link active" data-nav="home"><span>⌂</span> Tableau de bord</button><button class="nav-link" data-nav="subjects"><span>▦</span> Mes matières</button><button class="nav-link" data-nav="recent"><span>◷</span> Documents récents</button></nav>
+    <nav class="side-nav" aria-label="Navigation"><button class="nav-link active" data-nav="home"><span>⌂</span> Tableau de bord</button><button class="nav-link" data-nav="subjects"><span>▦</span> Mes matières</button><button class="nav-link" data-nav="recent"><span>◷</span> Documents récents</button><button class="nav-link" data-nav="ai"><span>✦</span> Assistant IA</button></nav>
     <div class="side-caption spaced">MES MATIÈRES</div><nav id="side-subjects" class="side-subjects"></nav>
     <div class="sidebar-bottom"><button class="nav-link" data-nav="cloud"><span>☁</span> Synchronisation</button><button class="nav-link" data-nav="backup"><span>⇅</span> Sauvegarde</button><div class="side-note">Gratuit · Sauvegarde locale + cloud<br><small>Connecte ton compte pour synchroniser.</small></div></div>
   </aside>
-  <div class="main-column"><header class="topbar"><button class="icon-button mobile-only" id="menu-toggle" aria-label="Ouvrir le menu">☰</button><div class="top-crumb" id="crumb">Mon espace de travail</div><div class="top-actions"><span class="offline-indicator" id="status-label">● Mode local</span><button class="icon-button" id="theme-toggle" aria-label="Changer de thème" title="Changer de thème">☾</button><button class="secondary small" id="install-button" hidden>Installer l'app</button></div></header><main class="content" id="content" tabindex="-1"></main><footer class="footer">StudySpace V1.2 · Sauvegarde locale et synchronisation optionnelle</footer></div>
+  <div class="main-column"><header class="topbar"><button class="icon-button mobile-only" id="menu-toggle" aria-label="Ouvrir le menu">☰</button><div class="top-crumb" id="crumb">Mon espace de travail</div><div class="top-actions"><span class="offline-indicator" id="status-label">● Mode local</span><button class="icon-button" id="theme-toggle" aria-label="Changer de thème" title="Changer de thème">☾</button><button class="secondary small" id="install-button" hidden>Installer l'app</button></div></header><main class="content" id="content" tabindex="-1"></main><footer class="footer">StudySpace V2 · Sauvegarde locale et synchronisation Supabase</footer></div>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <dialog id="modal"><form method="dialog" class="modal-shell" id="modal-form"><div class="modal-heading"><h2 id="modal-title"></h2><button class="icon-button" value="cancel" formnovalidate aria-label="Fermer">✕</button></div><div id="modal-fields"></div><div class="modal-actions"><button class="secondary" value="cancel" formnovalidate>Annuler</button><button class="primary" id="modal-save" value="save">Enregistrer</button></div></form></dialog>
@@ -26,4 +26,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
 <script src="app.js" defer></script>
 <script src="cloud.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js" defer></script>
+<script src="ai.js" defer></script>
 </body></html>

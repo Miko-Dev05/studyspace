@@ -73,7 +73,7 @@
   }
   document.addEventListener('click',e=>{const id=e.target.closest('button')?.id;if(!id?.startsWith('cloud-'))return;
     const task={'cloud-login':()=>login(false),'cloud-signup':()=>login(true),'cloud-start':initializeCloud,'cloud-send':sendNow,'cloud-receive':receiveNow,'cloud-force':forceSend,'cloud-logout':logout}[id];if(task)task().catch(err=>setStatus(errorText(err),true));});
-  window.studyCloud={markDirty,download,enabled:()=>Boolean(client&&user&&active),render};
+  window.studyCloud={client,markDirty,download,enabled:()=>Boolean(client&&user&&active),render};
   if(client){client.auth.getUser().then(({data,error})=>{if(!error)onUser(data?.user)}).catch(()=>{});
     client.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT')onUser(null);else if(session?.user)setTimeout(()=>onUser(session.user),0)});
     setInterval(()=>{if(user&&active&&!busy){if(dirty)schedule();else if(document.visibilityState==='visible')pull({quiet:true}).catch(()=>{})}},45000);

@@ -1,14 +1,14 @@
-# StudySpace V1.2 — design personnalisé + synchronisation
+# StudySpace V2
 
-Cette version conserve le thème clair/sombre, le sélecteur d’icônes et le lecteur de documents agrandi des fichiers fournis.
+Application web installable (PWA) de révision, sans framework.
 
-## Installation
-1. Exporte une sauvegarde depuis StudySpace sur ton PC.
-2. Copie ton `config.js` déjà configuré (URL + clé publique) par-dessus le `config.js` fourni. **Ne partage pas de clé secrète.**
-3. Copie les fichiers du dossier dans ton dépôt GitHub cloné, sans remplacer le dossier `.git`.
-4. Vérifie `git status`, puis lance `git add .`, `git commit -m "StudySpace V1.2 synchronisation"` et `git push origin main`.
-5. Ouvre GitHub Pages et le menu Synchronisation. Crée un compte ou connecte-toi, puis relie d’abord le PC (source des cours) et ensuite ton téléphone.
+## Nouveautés
 
-Le SQL nécessaire est fourni à titre de référence. Si tu l’as déjà exécuté avec succès, **ne le relance pas**.
+- L'assistant IA prépare des fiches, des résumés, des quiz et des explications depuis des textes, PDF, images ou documents existants.
+- Les résultats peuvent être modifiés, enregistrés comme notes, téléchargés en PDF ou ajoutés en PDF dans le chapitre.
+- Les formulaires de création/modification contiennent **Annuler / Enregistrer** ; les sauvegardes sont synchronisées par Supabase quand le compte est connecté.
+- Un nouveau Service Worker rafraîchit les scripts et la page HTML depuis le réseau quand il est disponible, tout en conservant l'accès hors ligne.
 
-Attention : l’archive contient un `config.js` d’exemple, sans clé réelle. Ne l’envoie pas tel quel : remplace-le par ta configuration publique.
+**Important :** l'API OpenAI est **payante à l'usage**, et la clé n'est conservée que temporairement en mémoire pour plus de sécurité. Pour l'activer, il faut déployer la fonction `supabase/functions/studyspace-ai/index.ts`.
+
+Pour installer et déployer : **INSTALLATION_V2.md**.
