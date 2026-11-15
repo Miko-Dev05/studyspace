@@ -4,6 +4,9 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#101a33"><meta name="description" content="Tous mes cours, chapitres et documents dans une seule application gratuite.">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="apple-touch-icon" href="assets/icon-192.png">
+<script>try{var t=localStorage.getItem('studyspace_theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=Plus+Jakarta+Sans:wght@500..800&display=swap">
 <link rel="stylesheet" href="styles.css"><title>StudySpace — Mes révisions</title>
 </head>
 <body>
@@ -13,11 +16,14 @@
     <div class="side-caption">ESPACE PERSONNEL</div>
     <nav class="side-nav" aria-label="Navigation"><button class="nav-link active" data-nav="home"><span>⌂</span> Tableau de bord</button><button class="nav-link" data-nav="subjects"><span>▦</span> Mes matières</button><button class="nav-link" data-nav="recent"><span>◷</span> Documents récents</button></nav>
     <div class="side-caption spaced">MES MATIÈRES</div><nav id="side-subjects" class="side-subjects"></nav>
-    <div class="sidebar-bottom"><button class="nav-link" data-nav="backup"><span>⇅</span> Sauvegarde</button><div class="side-note">100 % gratuit · Données locales<br><small>Synchronisation non incluse dans cette version</small></div></div>
+    <div class="sidebar-bottom"><button class="nav-link" data-nav="cloud"><span>☁</span> Synchronisation</button><button class="nav-link" data-nav="backup"><span>⇅</span> Sauvegarde</button><div class="side-note">Gratuit · Sauvegarde locale + cloud<br><small>Connecte ton compte pour synchroniser.</small></div></div>
   </aside>
-  <div class="main-column"><header class="topbar"><button class="icon-button mobile-only" id="menu-toggle" aria-label="Ouvrir le menu">☰</button><div class="top-crumb" id="crumb">Mon espace de travail</div><div class="top-actions"><span class="offline-indicator" id="status-label">● Stockage local</span><button class="secondary small" id="install-button" hidden>Installer l'app</button></div></header><main class="content" id="content" tabindex="-1"></main><footer class="footer">StudySpace V1 · Vos fichiers restent dans ce navigateur · Pensez à exporter une sauvegarde</footer></div>
+  <div class="main-column"><header class="topbar"><button class="icon-button mobile-only" id="menu-toggle" aria-label="Ouvrir le menu">☰</button><div class="top-crumb" id="crumb">Mon espace de travail</div><div class="top-actions"><span class="offline-indicator" id="status-label">● Mode local</span><button class="icon-button" id="theme-toggle" aria-label="Changer de thème" title="Changer de thème">☾</button><button class="secondary small" id="install-button" hidden>Installer l'app</button></div></header><main class="content" id="content" tabindex="-1"></main><footer class="footer">StudySpace V1.2 · Sauvegarde locale et synchronisation optionnelle</footer></div>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<dialog id="modal"><form method="dialog" class="modal-shell" id="modal-form"><div class="modal-heading"><h2 id="modal-title"></h2><button class="icon-button" value="cancel" aria-label="Fermer">✕</button></div><div id="modal-fields"></div><div class="modal-actions"><button class="secondary" value="cancel">Annuler</button><button class="primary" id="modal-save" value="save">Enregistrer</button></div></form></dialog>
+<dialog id="modal"><form method="dialog" class="modal-shell" id="modal-form"><div class="modal-heading"><h2 id="modal-title"></h2><button class="icon-button" value="cancel" formnovalidate aria-label="Fermer">✕</button></div><div id="modal-fields"></div><div class="modal-actions"><button class="secondary" value="cancel" formnovalidate>Annuler</button><button class="primary" id="modal-save" value="save">Enregistrer</button></div></form></dialog>
+<script src="config.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
 <script src="app.js" defer></script>
+<script src="cloud.js" defer></script>
 </body></html>

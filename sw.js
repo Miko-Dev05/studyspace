@@ -1,5 +1,5 @@
-const CACHE='studyspace-v1-1-20261115';
-const ASSETS=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png','./docs/philosophie-devoir.pdf'];
+const CACHE='studyspace-v1-2-design-sync-20261115';
+const ASSETS=['./','./index.html','./styles.css','./app.js','./cloud.js','./config.js','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png','./docs/philosophie-devoir.pdf'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(url.origin!==location.origin)return;event.respondWith(caches.match(event.request).then(hit=>hit||fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(c=>c.put(event.request,copy))}return response}))) });
