@@ -2,5 +2,5 @@
 // NE JAMAIS mettre une service_role key ou une clé secrète ici.
 window.STUDYSPACE_SUPABASE = {
   url: 'https://qdniukxbiddvoznxuwdd.supabase.co/rest/v1/',
-  publishableKey: 'qdniukxbiddvoznxuwdd'
+  publishableKey: 'sb_publishable__g7tuHR4PrCnUZB4Yl4rsA_QMF_Jbzt'
 };
